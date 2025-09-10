@@ -1,7 +1,3 @@
-import random
-
-random_number = random.randint(0, 100)
-
 def bin_search(random_number:int):
     number = int(input(" "))
 
