@@ -22,5 +22,5 @@ while computer_score < 7 and student_score < 7:
         computer_score += 1
         print(f"компьютер - ученик \n{random_seed} - {student_main}  \n{computer_score} - {student_score}  (выиграл компьютер)")
 
-    if computer_score == 7 and student_score == 7:
-        print("Конец игры!")
+if computer_score == 7 or student_score == 7:
+    print("Конец игры!")
