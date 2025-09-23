@@ -13,7 +13,7 @@ try:
      seq_list.append(a)
      n1 = n2
      n2 = a
-     i += 1
+     
    print(seq_list)
 
 except ValueError:
