@@ -5,12 +5,13 @@ while True:
         total = 0
         for i in range(quantity):
             price = input(f"Введите цену товара {i+1}: ")
-            if price.isdigit():
-                price = int(price)
-                total  += price
-                break
-            else:
-                print("Ошибка: введите число для количества!")
+            while True:
+                if price.isdigit():
+                    price = int(price)
+                    total  += price
+                    break
+                else:
+                    print("Ошибка: введите число для количества!")
 
         print(f"Общая сумма: {total}")
 
@@ -32,8 +33,8 @@ while True:
         print(f"Количество товаров: {quantity}")
         average_price = total_amount / quantity
         print(f"Средняя цена: {average_price:.2f}")
-
         break
+
     else:
         print("Ошибка: введите число для количества!")
         quantity = input("Введите количество товаров: ")
