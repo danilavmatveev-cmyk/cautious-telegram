@@ -1,19 +1,13 @@
 def bin_search(random_number:int):
-    number = int(input(" "))
-
-    while number != random_number:
+    while True:
+        number = int(input(""))
         if number < random_number:
             print(f"Неверно! Число больше {number}")
         elif number > random_number:
             print(f"Неверно! Число меньше {number}")
-
-        try:
-            number = int(input(" "))
-        except ValueError:
-            print("Пожалуйста, введите целое число!")
-            continue
-
-    print("Верно!")
+        else:
+            print("Верно!")
+            break
 
 
 
