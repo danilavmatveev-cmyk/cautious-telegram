@@ -11,7 +11,7 @@ def bin_search(random_number:int):
 
 
 
-bin_search(0)
+bin_search(50)
 
 
 

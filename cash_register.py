@@ -13,16 +13,16 @@ while True:
                 else:
                     print("Ошибка: введите число для количества!")
 
-        print(f"Общая сумма: {total}")
+        print(f"Общая сумма: {total} руб.")
 
-        if total >= 500:
-            discount = 0
-            discount_text = "нет"
-            total_amount = total
-        elif total % 13 == 0 or total % 101 == 0:
+        if total % 13 == 0 or total % 101 == 0:
             discount = 31
             discount_text = "31 %"
             total_amount = total * 0.69
+        elif total >= 500:
+            discount = 0
+            discount_text = "нет"
+            total_amount = total
         else:
             discount = 5
             discount_text = "5%"
