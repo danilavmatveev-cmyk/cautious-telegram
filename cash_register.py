@@ -29,10 +29,10 @@ while True:
             total_amount = total * 0.95
 
         print(f"Скидка: {discount_text}")
-        print(f"Итоговая сумма: {total_amount:.2f}")
+        print(f"Итоговая сумма: {total_amount:.2f} руб.")
         print(f"Количество товаров: {quantity}")
         average_price = total_amount / quantity
-        print(f"Средняя цена: {average_price:.2f}")
+        print(f"Средняя цена: {average_price:.2f} руб.")
         break
 
     else:
