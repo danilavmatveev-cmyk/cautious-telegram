@@ -1,36 +1,65 @@
-def guess_code(pasword: str):
+def guess_code(password: str):
 
-    pasword_list = list(pasword)
+    password_list = list(password)
+    attempts = 0
 
-
-    for j in range(9):
+    for j in range(1,11):
         code = input("")
         code_list = list(code)
-        number = 0
-        place_number = 0
+        if len(code_list) != 5:
+            print("Ошибка! Нужно ввести ровно 5 цифр")
+            continue
+
+        attempts += 1
+
         if len(code_list) == 5:
-            if code_list != pasword_list:
-                for i in range(len(pasword_list)):
-                    if code_list[i] in pasword_list:
-                       number = number + 1
+            number = 0
+            place_number = 0
+            if code_list == password_list:
+                print(f"Угадано цифр: 5")
+                print(f"На своих местах: 5" + "\n")
+                print(f"Поздравляем! Вы угадали пароль {password} за {attempts} попыток!")
+                break
+            else:
+                for i in range(len(password_list)):
+                    if code_list[i] in password_list:
+                        number = number + 1
                     else:
                         number = number + 0
 
-
                 for n in range(len(code_list)):
-                    if pasword_list[n] == code_list[n]:
+                    if password_list[n] == code_list[n]:
                         place_number = place_number + 1
                     else:
                         place_number = place_number + 0
 
+
                 print(f"Угадано цифр: {number}")
-                print(f"На своих местах: {place_number}")
+                print(f"На своих местах: {place_number}" + "\n")
                 print("Неверно, попробуйте ещё раз")
-            else:
-                print(f"Поздравляем! Вы угадали пароль {pasword} за {j} попыток!")
-                break
-        else:
-            print("Ошибка! Нужно ввести ровно 5 цифр")
+
+
+
+
+    else:
+        print("Игра окончена! Правильный пароль был: 39412")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 guess_code("39412")
 
