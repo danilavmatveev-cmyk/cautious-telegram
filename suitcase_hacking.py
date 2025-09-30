@@ -37,8 +37,10 @@ def guess_code(password: str):
 
 
         print(f"Угадано цифр: {number}")
-        print(f"На своих местах: {place_number}" + "\n")
-        print("Неверно, попробуйте ещё раз")
+        print(f"На своих местах: {place_number}")
+
+        if j < 10:
+            print("Неверно, попробуйте ещё раз")
 
 
 
