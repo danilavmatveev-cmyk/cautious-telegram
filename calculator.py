@@ -6,7 +6,7 @@ while symbol != "=":
     number = float(input("Число: "))
     number_list.append(number)
 
-    symbol = input("Оператор (+,-,*,/,^) или =: ")
+    symbol = input("Оператор: ")
     if symbol == "=":
         break
     else:
