@@ -6,7 +6,7 @@ for i in range (len(week_days)):
     star = mood * "*"
     rating = f"({mood})"
     if 1 <= mood <= 10:
-        mood_list.append(star + rating)
+        mood_list.append(star + " " + rating)
     else:
         mood_list.append("(0)")
 
