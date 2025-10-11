@@ -18,6 +18,6 @@ def one_two_three(current, target):
 
     return cache[(current, target)]
 
-total = one_two_three(2,15) * one_two_three(15,50)
+total = one_two_three(3,15) * one_two_three(15,50)
 
 print(total)
