@@ -19,7 +19,3 @@ def is_prime(n):
 
 
 print(is_prime(911))
-
-
-
-
