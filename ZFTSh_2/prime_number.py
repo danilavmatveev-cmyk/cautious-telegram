@@ -1,6 +1,4 @@
-cache = {}
-
-def is_prime(n):
+def is_prime(n,cache = {}):
     if n in cache:
         return cache[n]
     if n == 1:
@@ -18,4 +16,4 @@ def is_prime(n):
     return True
 
 
-print(is_prime(911))
+print(is_prime(910))
