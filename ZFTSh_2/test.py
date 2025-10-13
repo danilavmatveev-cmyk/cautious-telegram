@@ -1,25 +1,25 @@
-cache = {}
+seq_list = []
+numbers = int(input())
 
-def is_prime(n):
-    if n in cache:
-        return cache[n]
-    if n == 1:
-        cache[n] = False
-        return False
-    if n == 2:
-        cache[n] = True
-        return True
-    for i in range(2,n):
-        if n % i == 0:
-            cache[n] = False
-            return False
+while numbers != 0:
+    seq_list.append(numbers)
+    numbers = int(input())
 
-    cache[n]= True
-    return True
+def seq_div_three(seq_list, cache = {}):
 
+    new_list =[]
 
-print(is_prime(911))
+    for i in range(len(seq_list)):
 
+        if seq_list[i] in cache:
+            return cache[i]
+
+        if seq_list [i] % 3 == 0:
+            new_list.append(seq_list[i])
+            cache[i] = new_list.append(seq_list[i])
+            return cache[i]
 
 
+    print(sum(cache))
 
+seq_div_three(seq_list)
