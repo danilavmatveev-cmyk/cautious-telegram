@@ -1,25 +1,13 @@
-seq_list = []
-numbers = int(input())
+year = int(input())
+cache = {}
+def is_leap_year(year):
 
-while numbers != 0:
-    seq_list.append(numbers)
-    numbers = int(input())
+    if year in cache:
+        return cache[year]
+    if (year % 4 == 0 and year % 100 > 0) or year % 400 == 0:
+        cache[year] = True
+        return True
+    else:
+        return False
 
-def seq_div_three(seq_list, cache = {}):
-
-    new_list =[]
-
-    for i in range(len(seq_list)):
-
-        if seq_list[i] in cache:
-            return cache[i]
-
-        if seq_list [i] % 3 == 0:
-            new_list.append(seq_list[i])
-            cache[i] = new_list.append(seq_list[i])
-            return cache[i]
-
-
-    print(sum(cache))
-
-seq_div_three(seq_list)
+print(is_leap_year(year))
