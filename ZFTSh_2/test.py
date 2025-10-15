@@ -15,6 +15,5 @@ def is_leap_year(year):
         return False
 
 print(is_leap_year(year))
-=======
-    
+
 is_leap_year(year)
