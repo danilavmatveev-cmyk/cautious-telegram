@@ -13,10 +13,8 @@ def is_leap_year(year):
         print(f"{year} - не високосный год")
         cache[year] = False
         return False
-<<<<<<< HEAD
 
 print(is_leap_year(year))
 =======
     
 is_leap_year(year)
->>>>>>> 72a31053aed42a5a01bad2ce3f4fb4a8d45f3b5e
