@@ -1,18 +1,11 @@
-numbers = int(input())
-seq_list = []
+def can_king_move(x1, y1, x2, y2):
+    if x1 == x2 and  (y2 == y1 +1 or y1 == y1 - 1):
+        return True
+    if x2 == x1-1 and (y1 == y1 or y2 == y1+1 or y1 == y1 - 1):
+        return True
+    if x2 == x1+1 and (y1 == y1 or y2 == y1+1 or y1 == y1 - 1):
+        return True
+    else:
+        return False
+print(can_king_move(1,1,2,3))
 
-while numbers != 0:
-    seq_list.append(numbers)
-    numbers = int(input())
-
-def seq_div_three(seq_list):
-    new_list = []
-
-    for i in range(len(seq_list)):
-
-        if seq_list[i] % 3 == 0:
-            new_list.append(seq_list[i])
-
-    print(sum(new_list))
-
-seq_div_three(seq_list)
