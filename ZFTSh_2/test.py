@@ -1,19 +1,27 @@
-year = int(input())
 cache = {}
-def is_leap_year(year):
+def hanoi_towers(n, from_rod, to_rod, aux_rod):
 
-    if year in cache:
-        return cache[year]
-    if (year % 4 == 0 and year % 100 > 0) or year % 400 == 0:
-        print(f"{year} - високосный год")
-        cache[year] = True
-        return True
 
-    else:
-        print(f"{year} - не високосный год")
-        cache[year] = False
-        return False
 
-print(is_leap_year(year))
+    if n == 0:
+        return  ""
 
-is_leap_year(year)
+    if n == 1:
+        cache [(n, from_rod, to_rod, aux_rod)] = hanoi_towers(0,0,1,0)
+        print(f"Переместить диск {n} со стержня {from_rod} на стержень {to_rod}")
+        return cache [(n, from_rod, to_rod, aux_rod)]
+
+    if n == 2:
+        cache [(n, from_rod, to_rod, aux_rod)] = (hanoi_towers(n, n-1, 0, 1) + hanoi_towers(n, n-2, 1, 1)
+                                                  + hanoi_towers(n, n-2, 2, 0))
+        return cache [(n, from_rod, to_rod, aux_rod)]
+
+    if n == 3:
+        cache [(n, from_rod, to_rod, aux_rod)] = (hanoi_towers(n, n-1, 0, 1) and hanoi_towers(n, n-2, 1, 1)
+                                                  and hanoi_towers(n, n-2, 2, 0))
+        return cache [(n, from_rod, to_rod, aux_rod)]
+
+
+
+
+print(hanoi_towers(2, "A", "C", "D"))
