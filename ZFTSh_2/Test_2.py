@@ -7,5 +7,5 @@ def can_king_move(x1, y1, x2, y2):
         return True
     else:
         return False
-print(can_king_move(1,1,2,3))
+print(can_king_move(1,1,1,1))
 
