@@ -1,5 +1,4 @@
-cache = {}
-def hanoi_towers(n, from_rod, to_rod, aux_rod):
+def hanoi_towers(n, from_rod, to_rod, aux_rod, cache = {}):
 
     if (n, from_rod, to_rod, aux_rod) in cache:
         return cache[n, from_rod, to_rod, aux_rod]
