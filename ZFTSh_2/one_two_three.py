@@ -13,7 +13,7 @@ def one_two_three(current, target):
         return 0
 
     cache[(current, target)] = (one_two_three(current + 1, target) +
-              one_two_three(current * 2, target) +
+                                one_two_three(current * 2, target) +
               one_two_three(current * 3, target))
 
     return cache[(current, target)]

@@ -1,10 +1,10 @@
-def hanoi_towers(n, from_rod, to_rod, aux_rod):
+def grasshopper_ways (n):
+    dp = [0]*(n+1)
+    dp[0] = 0
+    dp[1] = 1
+    dp[2] = 2
+    for i in range(3, n+1):
+        dp[i] =dp[i-1]+dp[i-2]
+    return dp[n]
+print(grasshopper_ways (11))
 
-    if n == 0:
-        return  ""
-
-    if n == 1:
-
-        return  f"Переместить диск {n} со стержня {from_rod} на стержень {to_rod}"
-
-print(hanoi_towers(1, "A", "C", "D"))
