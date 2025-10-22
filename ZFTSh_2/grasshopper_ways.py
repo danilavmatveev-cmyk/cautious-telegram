@@ -4,7 +4,7 @@ def grasshopper_ways (n):
         return cache[n]
 
     if n == 0:
-        return 0
+        return 1
     if n == 1:
         return 1
     if n == 2:
@@ -13,4 +13,4 @@ def grasshopper_ways (n):
     result = grasshopper_ways(n-1) + grasshopper_ways(n-2)
     cache[n] = result
     return result
-print(grasshopper_ways (11))
+print(grasshopper_ways (1))
