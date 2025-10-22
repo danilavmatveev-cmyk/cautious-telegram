@@ -1,5 +1,5 @@
-cache = {}
 def grasshopper_ways (n):
+    cache = {}
     if n in cache:
         return cache[n]
 
@@ -13,4 +13,4 @@ def grasshopper_ways (n):
     result = grasshopper_ways(n-1) + grasshopper_ways(n-2)
     cache[n] = result
     return result
-print(grasshopper_ways (1))
+print(grasshopper_ways (121))

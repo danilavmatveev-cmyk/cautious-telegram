@@ -1,20 +1,33 @@
-def hanoi_towers(n, from_rod, to_rod, aux_rod):
+def grasshopper_with_obstacles(n, obstacles):
 
-    if n == 0:
-        return  ""
+    if not obstacles:
+        if n == 0:
+            return 1
+        if n == 1:
+            return 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        dp[1] = 1
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2] + dp[i-3]
+        return dp[n]
+    else:
+        if n == 0:
+            return 1
+        if n == 1:
+            return 0
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        dp[1] = 0
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        return dp[n]
 
-    if n == 1:
-        result = f"Переместить диск {n} со стержня {from_rod} на стержень {to_rod}\n"
-        return result
-
-    step1 = hanoi_towers(n - 1, from_rod, aux_rod, to_rod)
-    step2 = f"Переместить диск {n} со стержня {from_rod} на стержень {to_rod}\n"
-    step3 = hanoi_towers(n - 1, aux_rod, to_rod, from_rod)
-    result = step1+step2+step3
-    return result
 
 
 
 
 
-print(hanoi_towers(3, "A", "C", "B"))
+print(grasshopper_with_obstacles(4,[3]))
+
+
