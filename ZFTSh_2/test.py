@@ -1,33 +1,34 @@
 def grasshopper_with_obstacles(n, obstacles):
+    if n < 0:
+        return 0
 
-    if not obstacles:
-        if n == 0:
-            return 1
-        if n == 1:
-            return 1
-        dp = [0] * (n + 1)
-        dp[0] = 1
-        dp[1] = 1
-        for i in range(2, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2] + dp[i-3]
-        return dp[n]
+
+    blocked_points = set(obstacles)
+
+    dp = [0] * (n + 1)
+
+
+    if 0 in blocked_points:
+        return 0
     else:
-        if n == 0:
-            return 1
-        if n == 1:
-            return 0
-        dp = [0] * (n + 1)
         dp[0] = 1
-        dp[1] = 0
-        for i in range(2, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2]
-        return dp[n]
 
 
+    for i in range(1, n + 1):
+        if i in blocked_points:
+            dp[i] = 0
+        else:
+            if i - 1 >= 0:
+                dp[i] = dp[i - 1] + dp[i]
 
 
+            if i - 2 >= 0:
+                dp[i] = dp[i - 2]+ dp[i]
 
 
-print(grasshopper_with_obstacles(4,[3]))
+            if i - 3 >= 0:
+                dp[i] = dp[i - 3]+ dp[i]
 
+    return dp[n]
 
+print(grasshopper_with_obstacles(2,[1]))
