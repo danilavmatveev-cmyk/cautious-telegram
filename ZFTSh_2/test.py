@@ -3,31 +3,26 @@ def grasshopper_with_obstacles(n, obstacles):
         return 0
 
 
-    blocked_obs = set(obstacles)
+    blocked_points = set(obstacles)
 
-    #
     dp = [0] * (n + 1)
 
 
-    if 0 in blocked_obs:
+    if 0 in blocked_points:
         return 0
     else:
         dp[0] = 1
 
-    # Заполняем массив dp для клеток от 1 до n
+
     for i in range(1, n + 1):
-        if i in blocked_obs:
+        if i in blocked_points:
             dp[i] = 0
         else:
-            # Прыжок на +1
             if i - 1 >= 0:
                 dp[i] += dp[i - 1]
-
-            # Прыжок на +2
             if i - 2 >= 0:
                 dp[i] += dp[i - 2]
 
-            # Прыжок на +3
             if i - 3 >= 0:
                 dp[i] += dp[i - 3]
 
