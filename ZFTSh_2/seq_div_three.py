@@ -1,18 +1,11 @@
-numbers = int(input())
-seq_list = []
-
-while numbers != 0:
-    seq_list.append(numbers)
-    numbers = int(input())
-
-def seq_div_three(seq_list):
+def seq_div_three(*args):
     new_list = []
 
-    for i in range(len(seq_list)):
+    for i in range(len(args)):
 
-        if seq_list[i] % 3 == 0:
-            new_list.append(seq_list[i])
+        if args[i] % 3 == 0:
+            new_list.append(args[i])
 
     print(sum(new_list))
 
-seq_div_three(seq_list)
+seq_div_three(1, 2, 4, 5, 7, 8, 0)
