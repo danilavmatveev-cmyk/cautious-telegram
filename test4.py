@@ -4,4 +4,4 @@ def max(list):
     sub_max = max(list[1:])
     return list[0] if list[0] > sub_max else sub_max
 
-print(max([1,2,3,4,5]))
+print(max([1,2,10,4,5]))
