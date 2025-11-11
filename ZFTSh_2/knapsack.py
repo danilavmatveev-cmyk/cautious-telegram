@@ -22,6 +22,3 @@ def knapsack(weights, values, capacity):
 
 
 print(knapsack([1, 2,3], [10, 15, 40], 5))
-
-
-
