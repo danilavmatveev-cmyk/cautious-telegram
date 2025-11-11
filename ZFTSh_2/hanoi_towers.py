@@ -17,4 +17,4 @@ def hanoi_towers(n, from_rod, to_rod, aux_rod):
 
 
 
-print(hanoi_towers(3, "A", "C", "B"))
+print(hanoi_towers(4, '1', '3', '2'))
