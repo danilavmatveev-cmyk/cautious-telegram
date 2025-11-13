@@ -21,4 +21,3 @@ def min_coins(amount, coins):
 
 
 print(min_coins(15, [1, 7, 10]))
-
