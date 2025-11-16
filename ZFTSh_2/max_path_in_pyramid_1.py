@@ -1,6 +1,6 @@
 def max_path_in_pyramid(pyramid):
-    dp = pyramid[-1].copy()
 
+    dp = pyramid[-1].copy()
 
 
     for row in range(len(pyramid) - 2, -1, -1):
@@ -12,4 +12,4 @@ def max_path_in_pyramid(pyramid):
         dp = current_dp
 
     return dp[0]
-print(max_path_in_pyramid([[1], [2, 3], [4, 5, 6]]))
+print(max_path_in_pyramid([[10], [20, 30], [40, 50, 60], [70, 80, 90, 100]]))

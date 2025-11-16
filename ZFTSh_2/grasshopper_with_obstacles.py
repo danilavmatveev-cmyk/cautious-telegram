@@ -30,4 +30,4 @@ def grasshopper_with_obstacles(n, obstacles):
 
 
 
-print(grasshopper_with_obstacles(3,[2]))
+print(grasshopper_with_obstacles(5,[1,3]))
