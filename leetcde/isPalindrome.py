@@ -12,9 +12,3 @@ class Solution:
             x = x // 10
 
         return original == reversed_num
-
-
-
-
-
-
