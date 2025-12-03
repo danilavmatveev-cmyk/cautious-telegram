@@ -10,33 +10,35 @@ def square(t,length):
     for i in range(4):
         t.fd(length)
         t.lt(90)
-    turtle.mainloop()
-    print(t)
 
-def polygon(t,length,n):
+
+def polygon(t,n,length):
+    angle = 360/n
     for i in range(n):
         t.fd(length)
-        t.lt(360/n)
-    turtle.mainloop()
-    print(t)
+        t.lt(angle)
+
 
 def circle(t,r):
-    circumference = 2*r*math.pi
-    n = 360
-    length = circumference/n
+    arc(t,r,360)
+
+def polyline(t, n, length, angle):
     for i in range(n):
         t.fd(length)
-        t.lt(360/n)
-    turtle.mainloop()
-    print(t)
-
+        t.lt(angle)
 
 def arc(t,r,angle):
-    length = (r*math.pi*angle)/180
-    for i in range(angle):
-        t.fd(length)
-        t.lt(1)
+    arc_length = (r*math.pi*angle)/180
+    n = int(arc_length / 3) + 1
+    step_length = arc_length / n
+    step_angle = angle / n
+    polyline(t, n, step_length,step_angle)
+    turtle.mainloop()
 
-arc(bob,1,360)
+arc(bob,50,90)
+
+
+
+
 
 
