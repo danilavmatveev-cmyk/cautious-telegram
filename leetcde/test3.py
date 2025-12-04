@@ -1,5 +1,5 @@
 from __future__ import print_function, division
-import fix_turtle  
+import fix_turtle
 import math
 import turtle
 
