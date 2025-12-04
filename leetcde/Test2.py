@@ -63,9 +63,29 @@ if __name__ == '__main__':
     radius = 100
     bob.pu()
     bob.fd(radius)
-    bob.lt(90)
+    bob.lt(10)
     bob.pd()
     arc(bob, radius,90)
+    bob.pu()
+    bob.home()
+    bob.fd(radius)
+    bob.lt(100)
+    bob.pd()
+    arc(bob, radius, -90)
+
+    bob.pu()
+    bob.home()
+    bob.fd(radius)
+    bob.lt(90)
+    bob.pd()
+    arc(bob, radius, 45)
+
+    bob.pu()
+    bob.home()
+    bob.fd(radius)
+    bob.lt(135)
+    bob.pd()
+    arc(bob, radius, -45)
 
 
 
