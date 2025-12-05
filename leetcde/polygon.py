@@ -1,7 +1,21 @@
+
+
+
 from __future__ import print_function, division
-import fix_turtle  
+import fix_turtle  # импортируем первым!
 import math
 import turtle
+
+
+def square(t, length):
+    """Draws a square with sides of the given length.
+
+    Returns the Turtle to the starting position and location.
+    """
+    for i in range(4):
+        t.fd(length)
+        t.lt(90)
+
 
 def polyline(t, n, length, angle):
     """Draws n line segments.
@@ -15,15 +29,6 @@ def polyline(t, n, length, angle):
         t.fd(length)
         t.lt(angle)
 
-def polygon(t, n, length):
-    """Draws a polygon with n sides.
-
-    t: Turtle
-    n: number of sides
-    length: length of each side.
-    """
-    angle = 360.0/n
-    polyline(t, n, length, angle)
 
 def polygon(t, n, length):
     """Draws a polygon with n sides.
@@ -55,6 +60,18 @@ def arc(t, r, angle):
     t.rt(step_angle/2)
 
 
+def circle(t, r):
+    """Draws a circle with the given radius.
+
+    t: Turtle
+    r: radius
+    """
+    arc(t, r, 360)
+
+
+# the following condition checks whether we are
+# running as a script, in which case run the test code,
+# or being imported, in which case don't.
 
 if __name__ == '__main__':
     bob = turtle.Turtle()
@@ -63,31 +80,15 @@ if __name__ == '__main__':
     radius = 100
     bob.pu()
     bob.fd(radius)
-    bob.lt(10)
-    bob.pd()
-    arc(bob, radius,90)
-    bob.pu()
-    bob.home()
-    bob.fd(radius)
-    bob.lt(100)
-    bob.pd()
-    arc(bob, radius, -90)
-
-    bob.pu()
-    bob.home()
-    bob.fd(radius)
     bob.lt(90)
     bob.pd()
-    arc(bob, radius, 45)
-
-    bob.pu()
-    bob.home()
-    bob.fd(radius)
-    bob.lt(135)
-    bob.pd()
-    arc(bob, radius, -45)
-
-
+    circle(bob, radius)
 
     # wait for the user to close the window
     turtle.mainloop()
+
+
+
+
+
+
