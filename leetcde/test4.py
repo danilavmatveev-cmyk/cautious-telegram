@@ -1,23 +1,17 @@
-def check_fermat(a,b,c,n):
-
-   if n>2:
-        if a**n+b**n == c**n:
-            print('«Не может быть, Ферма ошибся!»')
-        else:
-            print("Нет, это не работает")
-   else:
-        print('введите значение степени больше 2')
-
-
-def input_fermat():
-    try:
-        a = int(input ("Введите a:" ))
-        b = int(input ("Введите b:" ))
-        c = int(input ("Введите c:" ))
-        n = int(input ("Введите степень:"))
-        check_fermat(a, b, c, n)
-    except ValueError:
-        print("Ошибка: пожалуйста, введите целые числа")
-
-if __name__ == "__main__":
-    input_fermat()
+import fix_turtle
+import turtle
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50
+    t.fd(length*n)
+    t.lt(angle)
+    draw(t, length, n-1)
+    t.rt(2*angle)
+    draw(t, length, n-1)
+    t.lt(angle)
+    t.bk(length*n)
+    turtle.mainloop()
+if __name__ == '__main__':
+    bob = turtle.Turtle()
+draw(bob,50,5)
