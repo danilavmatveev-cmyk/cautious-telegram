@@ -1,17 +1,19 @@
 import fix_turtle
 import turtle
-def draw(t, length, n):
-    if n == 0:
-        return
-    angle = 50
-    t.fd(length*n)
+def koch(t, length):
+    if length < 3:
+        t.fd(length)
+    angle = 60
+    t.fd(length/3)
     t.lt(angle)
-    draw(t, length, n-1)
-    t.rt(2*angle)
-    draw(t, length, n-1)
+    t.fd(length / 3)
+    t.rt(2 * angle)
+    t.fd(length / 3)
     t.lt(angle)
-    t.bk(length*n)
+
+
+
     turtle.mainloop()
 if __name__ == '__main__':
     bob = turtle.Turtle()
-draw(bob,50,5)
+koch(bob,150)
