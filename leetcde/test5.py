@@ -1,21 +1,19 @@
-def is_triangle(a,b,c):
-    if a+b<=c or a+c<=b or b+c<=a:
-        return False
-    else:
-        return True
-def input_is_triangle():
-    try:
-        a = int(input ("Введите a:" ))
-        b = int(input ("Введите b:" ))
-        c = int(input ("Введите c:" ))
+import fix_turtle
+import turtle
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50
+    t.fd(length*n)
+    t.lt(angle)
+    draw(t, length, n - 1)
+    t.rt(2 * angle)
+    draw(t, length, n - 1)
+    t.lt(angle)
+    t.bk(length * n)
 
-
-        result = is_triangle(a, b, c)
-        print(result)
-    except ValueError:
-        print("Ошибка: пожалуйста, введите целые числа")
-
-if __name__ == "__main__":
-    input_is_triangle()
-
+if __name__ == '__main__':
+    bob = turtle.Turtle()
+    draw(bob,10,10)
+    turtle.mainloop()
 
