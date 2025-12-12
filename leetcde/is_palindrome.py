@@ -7,8 +7,8 @@ def middle(text):
 def is_palindrome(text:str):
     if len(text) <= 1:
         return True
-    elif first(text) == last(text):
-        return is_palindrome(middle(text))
-    else:
+    elif first(text) != last(text):
         return False
+    else:
+        return is_palindrome(middle(text))
 print(is_palindrome("forof"))
