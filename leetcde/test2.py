@@ -1,27 +1,23 @@
 import math
-def mysqrt(a, epsilon=1e-10):
 
-    if a < 0:
-        raise ValueError("Квадратный корень из отрицательного числа не определен")
-    if a == 0:
-        return 0
-    if a == 1:
-        return 1
-
-
-    x = a / 2
-
+def estimate_pi(epsilon=1e-15):
+    k = 0
+    total = 0
     while True:
-        y = (x + a/x) / 2
-        if abs(y-x) < epsilon:
+        x = math.factorial(4 * k) * (1103 + 26390 * k) / (math.factorial(k)**4 * (396 ** (4 * k)))
+        total += x
+
+
+
+        if abs(x) < epsilon:
             break
-        x = y
+        k += 1
 
-    return y
-def test_square_root(a):
-    diff = abs(mysqrt(a)- math.sqrt(a))
-    print("a     mysqrt(a)           math.sqrt(a)         diff")
-    print("-     ---------           ------------         ----")
-    print(f"{float(a):<3}    {mysqrt(a):<16.15}  {math.sqrt(a):<16.15}  {diff}")
+    pi_approx = 9801 / (2 * math.sqrt(2) * total)
+    return pi_approx
 
-test_square_root(25)
+
+print(estimate_pi())
+
+
+
