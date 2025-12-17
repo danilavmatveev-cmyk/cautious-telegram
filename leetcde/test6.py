@@ -1,11 +1,36 @@
-def first(text):
-    return text[0]
-def last(text):
-    return text[-1]
-def middle(text):
-    return text[1:-1]
-def is_txet(text:str):
-    if len(text) <= 1:
-        return text
-    return last(text) + is_txet(middle(text)) + first(text)
-print(is_txet("rwsdsdfewfv dfdf"))
+def any_lowercase2(s):
+    for c in s:
+        if c.islower():
+            return True
+
+    return False
+print(any_lowercase2("SС"))
+
+def any_lowercase4(s):
+    flag = False
+    for c in s:
+        flag = flag or c.islower()
+    return flag
+print(any_lowercase4("sc"))
+
+
+
+
+def rotate_word(text:str,number):
+    result_chars = []
+    for char in text:
+        if 'a' <= char <= 'z':
+            
+            shifted = chr((ord(char) - ord('a') + number) % 26 + ord('a'))
+            result_chars.append(shifted)
+        elif 'A' <= char <= 'Z':
+
+            shifted = chr((ord(char) - ord('A') + number) % 26 + ord('A'))
+            result_chars.append(shifted)
+        else:
+
+            result_chars.append(char)
+
+    return "".join(result_chars)
+
+print(rotate_word("rambler",10))
