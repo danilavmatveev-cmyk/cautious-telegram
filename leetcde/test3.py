@@ -1,16 +1,16 @@
-import math
-def eval_loop():
-    result = None
+def find(word, letter, index):
+    while index < len(word):
+        if word[index] == letter:
+            return index
+        index = index + 1
+    return -1
 
-    while True:
-        line = input('> ')
+print(find("кракозябраб","б",3))
 
-
-        if line == 'готово':
-            break
-        result = eval(line)
-
-    print(result)
-
-
-eval_loop()
+def count (word,letter):
+    c = 0
+    for letter in word:
+        if letter == 'а':
+            c = c + 1
+    return (c)
+print(count("ракозябра", "а"))
