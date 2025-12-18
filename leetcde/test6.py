@@ -20,7 +20,7 @@ def rotate_word(text:str,number):
     result_chars = []
     for char in text:
         if 'a' <= char <= 'z':
-            
+
             shifted = chr((ord(char) - ord('a') + number) % 26 + ord('a'))
             result_chars.append(shifted)
         elif 'A' <= char <= 'Z':
