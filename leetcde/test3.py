@@ -1,16 +1,16 @@
-def find(word, letter, index):
-    while index < len(word):
-        if word[index] == letter:
-            return index
-        index = index + 1
-    return -1
+def has_no_e():
+    with open('words.txt', 'r') as fin:
+        for line in fin:
+            word = line.strip()
+            if "e" not in word.lower():
+                return True
+    return False
 
-print(find("кракозябраб","б",3))
+if has_no_e():
+    with open('words.txt', 'r') as fin:
+        for line in fin:
+            word = line.strip()
+            if 'e' not in word.lower():
+                print(word)
 
-def count (word,letter):
-    c = 0
-    for letter in word:
-        if letter == 'а':
-            c = c + 1
-    return (c)
-print(count("ракозябра", "а"))
+
