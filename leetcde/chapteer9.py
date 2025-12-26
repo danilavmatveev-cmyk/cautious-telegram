@@ -43,28 +43,22 @@ def has_three_consecutive_pairs(word):
     if len(word) < 6:
         return False
 
-    pair_count = 0
-    i = 0
-    while i < len(word) - 1:
-        if word[i] == word[i + 1]:
-            pair_count += 1
-            if pair_count == 3:
-                return True
-            i += 2
-        else:
-            pair_count = 0
-            i += 1
 
+    for i in range(len(word) - 5):
+        if word[i] == word[i + 1] and word[i + 2] == word[i + 3] and word[i + 4] == word[i + 5]:
+            return True
     return False
 
 
-def three_pairs_letters():
-    """Находит все слова с тремя парами одинаковых букв подряд"""
-    with open('words.txt') as fin:
-        words = [line.strip() for line in fin]
+def find_three_consecutive_pairs():
 
     result = []
-    for word in words:
-        if has_three_consecutive_pairs(word):
-            result.append(word)
+
+    with open('words.txt') as fin:
+        for line in fin:
+            word = line.strip()
+            if has_three_consecutive_pairs(word):
+                result.append(word)
+
     return result
+print(find_three_consecutive_pairs())
