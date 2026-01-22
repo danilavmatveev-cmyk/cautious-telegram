@@ -61,4 +61,62 @@ def find_three_consecutive_pairs():
                 result.append(word)
 
     return result
-print(find_three_consecutive_pairs())
+
+
+def palindrome_odometer():
+    for i in range(1, 6):
+        if a[i] == word[i-1]:
+            return True
+
+
+def is_palindrome(x: int):
+    if x < 0 or (x % 10 == 0 and x != 0):
+        return False
+
+
+
+    reversed_half = 0
+    while x > reversed_half:
+        reversed_half = reversed_half * 10 + x % 10
+        x //= 10
+    return x == reversed_half or x == reversed_half // 10
+
+
+def get_four_digit_palindromes():
+    result = []
+    for first_two in range(10, 100):  # от 10 до 99
+
+        palindrome = int(str(first_two) + str(first_two)[::-1])
+        result.append(palindrome)
+    return result
+
+
+def get_five_digit_palindromes():
+    result = []
+    for first_two in range(10, 100):  # от 10 до 99
+            for middle in range(0,10):
+                palindrome = int(str(first_two) + str(middle) + str(first_two)[::-1])
+                result.append(palindrome)
+    return result
+
+def get_for_plus_one_palindrome():
+    result = []
+    for x in get_four_digit_palindromes():
+        z = x+1
+        for begin in range(0,10):
+            y = int(str(begin)+str(z))
+            if y in get_five_digit_palindromes():
+                result.append(y)
+    return result
+print(get_for_plus_one_palindrome())
+
+def get_for_plus_one_plus_one_palindrome():
+    result = []
+    for x in get_for_plus_one_palindrome():
+        z = x+1
+        y = int(str(z)[:4])
+        if y in get_four_digit_palindromes():
+            result.append(y)
+    return result
+
+def puzzlers():
