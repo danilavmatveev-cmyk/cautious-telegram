@@ -6,13 +6,11 @@ for i in range(N):
 
 def exam_graph(G):
     N = len(G)
-    mask_orien = True
     for i in range(N):
         for j in range(N):
             if G[i][j] != G[j][i]:
-                mask_orien = False
-                break
-    return mask_orien
+                return False
+    return True
 
 
 def count__degree(G):
@@ -27,5 +25,9 @@ def count__degree(G):
             count += 1
 
     return count
-result = exam_graph(G)
-print(result)
+if exam_graph(G):
+    print("No")
+    print(count__degree(G))
+else:
+    print("Yes")
+
