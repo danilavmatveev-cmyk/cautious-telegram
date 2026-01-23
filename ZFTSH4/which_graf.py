@@ -13,7 +13,7 @@ def exam_graph(G):
     return True
 
 
-def count__degree(G):
+def count_degree(G):
     N = len(G)
     count = 0
 
@@ -27,7 +27,7 @@ def count__degree(G):
     return count
 if exam_graph(G):
     print("No")
-    print(count__degree(G))
+    print(count_degree(G))
 else:
     print("Yes")
 
