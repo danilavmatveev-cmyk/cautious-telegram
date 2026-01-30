@@ -16,15 +16,12 @@ def exam_graph(G):
 def count_degree(G):
     N = len(G)
     count = 0
-
     for i in range(N):
-
         degree = sum(G[i]) + G[i][i]
-
         if degree % 2 == 0:
             count += 1
-
     return count
+
 if exam_graph(G):
     print("No")
     print(count_degree(G))

@@ -1,5 +1,3 @@
-
-
 def input_graf():
     N = int(input())
     G = [[0]*N for i in range(N)]
