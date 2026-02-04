@@ -1,4 +1,4 @@
-def input_graf():
+ def input_graf():
     N = int(input())
     G = [[0]*N for i in range(N)]
     vertex_index = {V_list[i]: i for i in range(N)}
