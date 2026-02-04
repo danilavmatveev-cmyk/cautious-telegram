@@ -42,4 +42,3 @@ for key in numbers:
 
 
 
-print(bintree_height(root)-1)
