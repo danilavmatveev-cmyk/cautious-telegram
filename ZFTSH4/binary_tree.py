@@ -40,5 +40,10 @@ for key in numbers:
     root = bst_insert(root, key)
 
 
+ current = root
+    while current.right:
+        current = current.right
+    max_tree = current.key
 
+    print(min_tree + max_tree)
 
