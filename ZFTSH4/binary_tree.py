@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Optional
 
 class Node:
@@ -15,21 +16,29 @@ def bst_insert(root: Optional[Node], key: int) -> Node:
             root.left = bst_insert(root.left, key)
         else:
             root.right = bst_insert(root.right, key)
-
     return root
 
-def bintree_height(root: Optional[Node]) -> int:
+def bfs_traversal(root: Optional[Node]) -> None:
     if root is None:
-        return 0
-    left_h = bintree_height(root.left)
-    right_h = bintree_height(root.right)
-    return max(left_h, right_h) + 1
+        return
+
+    q: deque[Node] = deque([root])
+    while q:
+        node = q.popleft()
+        print(node.key, end=' ')
+        if node.left:
+            q.append(node.left)
+        if node.right:
+            q.append(node.right)
 
 root: Optional[Node] = None
-numbers = [8,4,2,1,3,12,10,9,11,14,13,15]
+
+
+numbers = list(map(int,input().split()))
 
 for key in numbers:
     root = bst_insert(root, key)
+
 
 
 
