@@ -1,8 +1,3 @@
-
-
-
-
-
 def count_paths(NV, KV, E):
     neighbours = [a for a, b in E if b == KV]
     if KV == NV:
