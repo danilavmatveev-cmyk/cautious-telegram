@@ -20,7 +20,7 @@ def bst_insert(root: Optional[Node], key: int) -> Node:
 
 def bfs_traversal(root: Optional[Node]) -> None:
     if root is None:
-        return
+        return 0,0
 
     q: deque[Node] = deque([root])
     while q:
@@ -31,6 +31,34 @@ def bfs_traversal(root: Optional[Node]) -> None:
         if node.right:
             q.append(node.right)
 
+
+def find_min_max_with_bfs(root: Optional[Node]) -> tuple[int, int]:
+
+    if root is None:
+        return
+
+    min_val = root.key
+    max_val = root.key
+
+    queue = deque([root])
+
+    while queue:
+        node = queue.popleft()
+
+
+        if node.key < min_val:
+            min_val = node.key
+        if node.key > max_val:
+            max_val = node.key
+
+
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
+    return min_val, max_val
+
 root: Optional[Node] = None
 
 
@@ -40,15 +68,9 @@ for key in numbers:
     root = bst_insert(root, key)
 
 
-current = root
-while current.right:
-    current = current.right
-max_tree = current.key
-
-current_min = root
-while current_min.left:
-    current_min = current_min.left
-min_tree = current_min.key
-
-print(min_tree + max_tree)
+if root:
+    min_val, max_val = find_min_max_with_bfs(root)
+    print(min_val + max_val)
+else:
+    print(0)
 
